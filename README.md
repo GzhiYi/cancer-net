@@ -1,5 +1,9 @@
 # cancer-net
 
+项目部分截图可以到这看看
+[相关截图](https://github.com/GzhiYi/cancer-net/tree/master/img/%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE)
+
+
 ## 项目基本情况
 - 项目主要页面"互助交流区"基本完成。主要有以下功能：
 - 所用技术：
