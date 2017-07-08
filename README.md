@@ -1,7 +1,17 @@
 # cancer-net
 
-项目部分截图可以到这看看
+![主要论坛界面图](https://github.com/GzhiYi/cancer-net/blob/master/img/%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E4%BA%92%E5%8A%A9%E4%BA%A4%E6%B5%81%E8%AE%BA%E5%9D%9B%E5%8F%AF%E4%BB%A5%E5%8F%91%E5%B8%96.png)
+
+![用户管理界面](https://github.com/GzhiYi/cancer-net/blob/master/img/%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83%E5%8F%AF%E4%BB%A5%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E5%8F%91%E7%9A%84%E5%B8%96%E5%AD%90.png)
+
+
+项目部分其他截图可以到这看看
 [相关截图](https://github.com/GzhiYi/cancer-net/tree/master/img/%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE)
+
+#项目修改记录
+- 2017-07-08 
+  增加有关用户界面的拦截，非登录用户无法访问修改个人信息的页面。
+  最新帖子回复可以显示几天前。
 
 
 ## 项目基本情况
