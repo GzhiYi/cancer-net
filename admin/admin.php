@@ -1,5 +1,12 @@
 <?php      
     session_start();
+    if(!$_SESSION['uuid']){
+        //$url = 'http://www.baidu.com';
+        //echo "<script type='text/javascript'>";  
+        //echo "window.location.href='$url'";  
+        //echo "</script>";  
+        echo "没有权限";
+    }
  ?>
 <!DOCTYPE html>
 <html lang="en">
