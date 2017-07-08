@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="../src/style/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../src/style/help_style.css">
     <link rel="stylesheet" href="../src/style/validation.css">
+    <link rel="stylesheet" type="text/css" href="../src/style/css/fileinput.min.css">
     <script src="../src/js/jquery-3.1.1.min.js"></script>
     <script src="../src/js/bootstrap.min.js"></script>
     <script src="../src/js/jquery.metadata.js"></script>
     <script src="../src/js/jquery.validate.min.js"></script>
     <script src="../src/js/messages_zh.min.js"></script>
     <script src="../src/js/setting.js"></script>
+    <script src="../src/js/fileinput.min.js"></script>
     
 </head>
 <body>
@@ -43,33 +45,39 @@
                 </ul>
             </div>
             <div class="col-md-6" ><!-- 基本信息 -->
-            <form method="post" class="form-horizontal" action="accountsuccess.php" id="form-basic">
-
-                    <div class="form-group">
-                    <label for="" class="control-label col-md-2">用户名*</label>
-                    
-                        <?php 
-                        $db = new mysqli('localhost','gzhiyi','8023','help');
-                        mysqli_set_charset($db,"utf8");
-                        $query = 'select * from users where user_id="'.$_SESSION['uuid'].'"';
-                        $result = mysqli_query($db, $query);
-                        
-                        while ($row = mysqli_fetch_assoc($result)){
-
-                            echo  '<div class="col-md-10">';
-                            echo "<input type='text' id='a_username' name='mgusername' class='form-control' placeholder='".$row['user_name']."'>";
-
-                        echo  '</div>';
-                    echo  '</div>';
+            <form method="post" class="form-horizontal" action="accountsuccess.php" id="form-basic" enctype="multipart/form-data">
+                 <div class="form-group">
+                    <label for="a_head" class="control-label col-md-2">修改头像</label>
+                    <div class="col-md-10">
+                        <input type="file" name="file" class="file" id="a_head">
+                    </div>
+                </div>
+                <div class="alert alert-danger col-md-offset-2 col-md-10">
+                        <p>注意添加头像后点击 <strong>Upload</strong> 上传头像</p>
+                </div>
+                <?php 
+                $db = new mysqli('localhost','gzhiyi','8023','help');
+                mysqli_set_charset($db,"utf8");
+                $query = 'select * from users where user_id="'.$_SESSION['uuid'].'"';
+                $result = mysqli_query($db, $query);
+                
+                while ($row = mysqli_fetch_assoc($result)){
                     echo  '<div class="form-group">';
-                        echo  '<label for="" class="control-label col-md-2">邮箱*</label>';
-                        echo  '<div class="col-md-10">';                              
-                            echo  '<div class="input-group">';
+                    echo  '<label for="" class="control-label col-md-2">用户名</label>';
+                    echo  '<div class="col-md-10">';
+                    echo "<input type='text' id='a_username' name='mgusername' class='form-control' placeholder='".$row['user_name']."'>";
 
-                                    echo '<input type="email" id="a_email" name="mgemail" placeholder="'.$row['email'].'" class="form-control">';
+                echo  '</div>';
+            echo  '</div>';
+            echo  '<div class="form-group">';
+                echo  '<label for="" class="control-label col-md-2">邮箱</label>';
+                echo  '<div class="col-md-10">';                              
+                    echo  '<div class="input-group">';
 
-                                 }
-                                ?>  
+                            echo '<input type="email" id="a_email" name="mgemail" placeholder="'.$row['email'].'" class="form-control">';
+
+                         }
+                        ?>  
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default">发送</button>
                                 </span> 

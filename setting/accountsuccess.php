@@ -9,6 +9,28 @@
     }
     if(isset($_SESSION['uuid'])){
        // if(isset($_POST['mgusername']) && isset($_POST['mgemail']) &&isset($_POST['mgsex'])){
+            if($_FILES["file"]["error"]){
+                echo $_FILES["file"]['error'];
+            }else{
+                //控制上传文件大小
+                if(($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]['type'] == "image/png") && $_FILES["file"]["size"] < 1024000){
+                    //文件存放位置
+                    $filename = "img/head/".date("YmdHis").$_FILES["file"]["name"];
+                    //转换格式编码
+                    $filename = iconv("UTF-8","gb2312",$filename);
+
+                    if(file_exists($filename)){
+                        echo "文件已经存在啦";
+                    }else{
+                        $finalname = "../".$filename;
+                        move_uploaded_file($_FILES["file"]["tmp_name"],$finalname);  
+                    }
+                }
+                else{
+                    echo "文件类型不正确";
+                }
+            }
+
             $mgusername = $_POST['mgusername'];
             $mgemail = $_POST['mgemail'];
             @$mgsex = $_POST['sex'];
@@ -21,14 +43,18 @@
             $modquery1 = 'update users set user_name ="'.$mgusername.'" where user_id ="'.$_SESSION['uuid'].'"';
             $modquery2 = 'update users set email ="'.$mgemail.'" where user_id ="'.$_SESSION['uuid'].'"';
             $modquery3 = 'update users set sex="'.$mgsex.'" where user_id ="'.$_SESSION['uuid'].'"';
-            if(@$mgusername !== ""){
-                @mysqli_query($db,$modquery1);
+            $modquery4 = 'update users set user_head ="'.$filename.'" where user_id ="'.$_SESSION['uuid'].'"';
+            if($mgusername !== ""){
+                mysqli_query($db,$modquery1);
             }
-            if(@$mgemail !== ""){
-                @mysqli_query($db,$modquery2);
+            if($mgemail !== ""){
+                mysqli_query($db,$modquery2);
             }
-            if(@$mgsex !== ""){
-                @mysqli_query($db,$modquery3);
+            if($mgsex !== ""){
+                mysqli_query($db,$modquery3);
+            }
+            if($filename !== ""){
+                mysqli_query($db,$modquery4);
             }
 
             $old_user = $_SESSION['uuid'];
