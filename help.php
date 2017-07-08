@@ -27,6 +27,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                    $_SESSION['uuid'] = $row['user_id'];/*还有加一个用户id会话变量*/
                    $_SESSION['head'] = $row['user_head'];//费力气
+                   $_SESSION['admin'] = 0;
               }
         }
         else{
@@ -37,6 +38,8 @@
                 while ($row = mysqli_fetch_assoc($admin_result)) {
                        $_SESSION['uuid'] = $row['user_id'];/*还有加一个用户id会话变量*/
                        $_SESSION['head'] = $row['user_head'];//费力气
+                       $_SESSION['admin'] = 1;
+
                   
                   }
                 $url = "admin/admin.php";  
