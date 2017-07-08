@@ -173,7 +173,7 @@
       <li class="active"><?php echo $post_title ?></li>
     </ol>
 
-    <table class="table table-bordered" style="background-color: white;">
+    <table class="table table-bordered table-responsive" style="background-color: white;">
         <tbody>
             <tr>
                 <td style="width: 186px;">
