@@ -1,13 +1,14 @@
-<?php      
+<?php  
+    error_reporting(0);    
     session_start();
-    if(!$_SESSION['uuid']){
-        //$url = 'http://www.baidu.com';
-        //echo "<script type='text/javascript'>";  
-        //echo "window.location.href='$url'";  
-        //echo "</script>";  
-        echo "没有权限";
+    if($_SESSION['admin'] !== 1){
+        $url = 'admin_errorPage.php';
+        echo  '<script>';
+             echo "window.location.href = '$url';";
+        echo  '</script>';
     }
  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

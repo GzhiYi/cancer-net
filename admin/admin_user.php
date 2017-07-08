@@ -1,5 +1,12 @@
-<?php      
+<?php  
+    error_reporting(0);    
     session_start();
+    if($_SESSION['admin'] !== 1){
+        $url = 'admin_errorPage.php';
+        echo  '<script>';
+             echo "window.location.href = '$url';";
+        echo  '</script>';
+    }
  ?>
 <!DOCTYPE html>
 <html lang="en">
