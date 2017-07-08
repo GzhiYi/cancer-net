@@ -1,5 +1,12 @@
 <?php 
+    error_reporting(0);
     session_start();
+    if($_SESSION['admin'] !== 0){
+        $url = '../admin/admin_errorPage.php';
+        echo  '<script>';
+             echo "window.location.href = '$url';";
+        echo  '</script>';
+    }
     $mgoldpwd = $_POST['mgoldpwd'];
     $mgnewpwd = $_POST['mgnewpwd'];
     $mgnewpwd_again = $_POST['mgnewpwd_again'];

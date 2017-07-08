@@ -1,5 +1,12 @@
 <?php 
+    error_reporting(0);
     session_start();
+    if($_SESSION['admin'] !== 0){
+        $url = '../admin/admin_errorPage.php';
+        echo  '<script>';
+             echo "window.location.href = '$url';";
+        echo  '</script>';
+    }
     if(isset($_SESSION['uuid'])){
        // if(isset($_POST['mgusername']) && isset($_POST['mgemail']) &&isset($_POST['mgsex'])){
             $mgusername = $_POST['mgusername'];
