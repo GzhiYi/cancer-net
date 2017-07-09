@@ -46,15 +46,15 @@
             </div>
             <div class="col-md-6" ><!-- 基本信息 -->
             <form method="post" class="form-horizontal" action="accountsuccess.php" id="form-basic" enctype="multipart/form-data">
-                 <div class="form-group">
-                    <label for="a_head" class="control-label col-md-2">修改头像</label>
-                    <div class="col-md-10">
-                        <input type="file" name="file" class="file" id="a_head">
-                    </div>
-                </div>
-                <div class="alert alert-danger col-md-offset-2 col-md-10">
-                        <p>注意添加头像后点击 <strong>Upload</strong> 上传头像</p>
-                </div>
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                <?php 
+                    echo  '<img src="../'.$_SESSION['head'].'" class="img-circle" style="width: 200px;height: 200px; border: 2px solid #ccc;">';
+                 ?>
+                    
+                 </div>
+            </div>
+                 
                 <?php 
                 $db = new mysqli('localhost','gzhiyi','8023','help');
                 mysqli_set_charset($db,"utf8");
@@ -62,6 +62,15 @@
                 $result = mysqli_query($db, $query);
                 
                 while ($row = mysqli_fetch_assoc($result)){
+                    echo  '<div class="form-group">';
+                        echo  '<label for="a_head" class="control-label col-md-2">修改头像</label>';
+                        echo  '<div class="col-md-10">';
+                            echo  '<input type="file" name="file" class="file" id="a_head">';
+                        echo  '</div>';
+                    echo  '</div>';
+                    echo  '<div class="alert alert-danger col-md-offset-2 col-md-10">';
+                            echo  '<p>注意添加头像后点击 <strong>Upload</strong> 上传头像<strong>  仅支持jpg,png,jpeg且图片大小不超过1m</strong></p>';
+                    echo  '</div>';
                     echo  '<div class="form-group">';
                     echo  '<label for="" class="control-label col-md-2">用户名</label>';
                     echo  '<div class="col-md-10">';

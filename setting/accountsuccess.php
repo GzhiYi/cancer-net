@@ -13,8 +13,9 @@
                 echo $_FILES["file"]['error'];
             }else{
                 //控制上传文件大小
-                if(($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]['type'] == "image/png") && $_FILES["file"]["size"] < 1024000){
+                if(($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]['type'] == "image/png") || ($_FILES["file"]["type"] == "image/jpeg") && $_FILES["file"]["size"] < 1024000){
                     //文件存放位置
+                    date_default_timezone_set("Etc/GMT-8");
                     $filename = "img/head/".date("YmdHis").$_FILES["file"]["name"];
                     //转换格式编码
                     $filename = iconv("UTF-8","gb2312",$filename);
