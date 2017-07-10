@@ -23,7 +23,6 @@ error_reporting(0);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>退出账户</title>
     <script src="src/js/jquery-3.1.1.min.js"></script>
