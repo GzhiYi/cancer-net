@@ -3,7 +3,7 @@
  */
 $(function() {
     $(".help_about").click(function() {
-        alert("前端设计：龚志毅1405553135======后台管理：郭玉明1405553136")
+        alert("龚志毅负责前后台开发，感谢php带来便捷的后台开发！")
     });
     $(".help_contact").click(function() {
         alert("联系我就好了===qq:745285458  ^ _ ^");

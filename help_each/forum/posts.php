@@ -27,7 +27,9 @@
         $timestamp = date("Y-m-d H:i:s");
         $righttime = strtotime($timestamp)-strtotime($lasttime);    
         echo  '<div class="alert alert-success">';
-            if($righttime > 3600){
+            if($righttime > 86400)
+              echo '最新帖子更新为：'.(int)($righttime/86400).'天前';
+            else if($righttime > 3600 && $righttime<86400){
               echo  '最新帖子更新大概为：'.(int)($righttime/3600).'小时前';
             }
             else if($righttime< 3600 && $righttime>60){
