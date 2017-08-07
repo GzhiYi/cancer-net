@@ -68,9 +68,12 @@
                             echo  '<input type="file" name="file" class="file" id="a_head">';
                         echo  '</div>';
                     echo  '</div>';
-                    echo  '<div class="alert alert-danger col-md-offset-2 col-md-10">';
-                            echo  '<p>注意添加头像后点击 <strong>Upload</strong> 上传头像<strong>  仅支持jpg,png,jpeg且图片大小不超过1m</strong></p>';
+                    echo  '<div class="form-group">';
+                        echo  '<div class="alert alert-danger col-md-offset-2 col-md-10">';
+                                echo  '<p>注意添加头像后点击 <strong>Upload</strong> 上传头像<strong>    仅支持jpg,png,jpeg且图片大小不超过1m</strong></p>';
+                        echo  '</div>';
                     echo  '</div>';
+                    
                     echo  '<div class="form-group">';
                     echo  '<label for="" class="control-label col-md-2">用户名</label>';
                     echo  '<div class="col-md-10">';
