@@ -1,4 +1,5 @@
 <?php
+    //尝试命令或者atom进行commit
     session_start();
     error_reporting(0);
     if(isset($_POST['username']) && isset($_POST['pwd'])){
@@ -40,11 +41,11 @@
                        $_SESSION['head'] = $row['user_head'];//费力气
                        $_SESSION['admin'] = 1;
 
-                  
+
                   }
-                $url = "admin/admin.php";  
+                $url = "admin/admin.php";
                 echo "<script type='text/javascript'>";
-                echo "window.location.href='$url'";  
+                echo "window.location.href='$url'";
                 echo "</script>";
             }
             else{
@@ -54,7 +55,7 @@
                   echo  '</button>提示：登陆失败,请检查用户名或者密码是否正确;确保无误请联系管理员进行账号查询。';
                 echo  '</div>';
             }
-            
+
         }
         $db->close();
     }
@@ -107,8 +108,8 @@
                 </div>
             </form>
         </ul>
-    
-        <?php 
+
+        <?php
             if(isset($_SESSION['uuid'])){//处理登录逻辑，没登录显示登录按钮，反之显示用户头像和用户名等
 
               echo  '<div id="login-success">';
@@ -129,7 +130,7 @@
             }
          ?>
     </nav>
-    
+
     <!-- 登陆模态框 -->
     <div class="modal fade" id="login" tabindex="-1" data-backdrop="static">
        <div class="modal-dialog">
@@ -204,7 +205,7 @@
                       <p>寻找知己</p>
                     </div>
                 </div>
-    
+
                 <div class="item">
                     <img src="img/lunbo2.jpg" alt="">
                     <div class="carousel-caption">
@@ -212,7 +213,7 @@
                       <p>聊一聊身边的事，总有人愿意倾听</p>
                     </div>
                 </div>
-    
+
                 <div class="item">
                     <img src="img/lunbo3.jpg" alt="">
                     <div class="carousel-caption">
@@ -228,11 +229,11 @@
                     </div>
                 </div>
             </div>
-    
+
             <a href="#carousel-my" class="left carousel-control"  data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             </a>
-    
+
             <a href="#carousel-my" class="right carousel-control"  data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             </a>
